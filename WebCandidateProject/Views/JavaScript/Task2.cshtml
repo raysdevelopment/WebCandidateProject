@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Call a REST service";
+}
+
+<h2>Call a REST service</h2>
+<div id="instructions" class="row javascript-code">
+    <p>
+        Below is a view to display one user. Modify the JavaScript to get the user with the id of 1. The view will bind using AngularJS.
+    </p>
+    <ul>
+        <li>Add the last name to the view</li>
+        <li>Modify /Scripts/App/AngularJS/Controllers/task2-controller.js to get the user with user id 1</li>
+        <li>Modify /Scripts/App/AngularJS/Services/user-service.js getUserById function to call /Controllers/API/UserController Get(int id)</li>
+    </ul>
+</div>
+<div class="row max-w-600 mar-top-40" ng-controller="Task2Controller" ng-init="init()">
+    <div class="row">
+        <div class="col-md-2">
+            <img ng-src="/Images/{{user.profileImage}}" />
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <label class="col-md-2">First Name</label>
+                <div class="col-md-10">
+                    {{user.firstName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Address</label>
+                <div class="col-md-10">
+                    {{user.address}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">City</label>
+                <div class="col-md-10">
+                    {{user.city}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">State</label>
+                <div class="col-md-10">
+                    {{user.state}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Zip</label>
+                <div class="col-md-10">
+                    {{user.zip}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 pad-top-20">
+        <p>
+            <a class="btn btn-primary" href="/JavaScript/Task1">&laquo; Previous</a>
+        </p>
+    </div>
+    <div class="col-md-2 col-md-offset-8 pad-top-20 next">
+        <p>
+            <a class="btn btn-primary" href="/JavaScript/Task3">Next &raquo;</a>
+        </p>
+    </div>
+</div>
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/jquery",
+        "~/bundles/jqueryval",
+        "~/bundles/bootstrap",
+        "~/bundles/third-party",
+        "~/bundles/angular")
+}

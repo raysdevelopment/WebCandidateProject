@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Display the selected user";
+}
+
+@section require{
+    <script type="text/javascript" src="/scripts/require.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+}
+
+<h2>Display the selected user</h2>
+<div id="instructions" class="row javascript-code">
+    <p>
+        Below is a view to display the user that is selected in the user drop down list.
+    </p>
+    <ul>
+        <li>Modify /Scripts/App/RequireJS/Services/user-service.js getUsers function using jQuery to get all of the users</li>
+        <li>Modify the JavaScript so that when a user is selected from the drop down list the view will display the selected user.</li>
+    </ul>
+</div>
+<div class="row max-w-600 mar-top-40">
+    <div class="row mar-bot-20" style="border-bottom: solid 1px lightgray;">
+        <div class="col-md-12">
+            <label>Select a User:</label>&nbsp;
+            <select id="users">
+                <option value="">Choose a user</option>
+            </select>
+        </div>
+    </div>
+    <div id="user-info" class="row" style="display:none;">
+        <div class="col-md-3">
+            <img id="profile-image" />
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <label class="col-md-2">First Name</label>
+                <div id="first-name" class="col-md-10">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Address</label>
+                <div id="address" class="col-md-10">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">City</label>
+                <div id="city" class="col-md-10">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">State</label>
+                <div id="state" class="col-md-10">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Zip</label>
+                <div id="zip" class="col-md-10">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 pad-top-20">
+        <p>
+            <a class="btn btn-primary" href="/JavaScript/Task2">&laquo; Previous</a>
+        </p>
+    </div>
+</div>
+
+@section scripts{
+    <script src="@Url.Content("/Scripts/App/RequireJS/Controllers/task3-controller.js")" type="text/javascript"></script>
+}
